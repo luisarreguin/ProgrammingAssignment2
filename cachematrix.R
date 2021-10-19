@@ -3,7 +3,6 @@
 
 ## The assignment consists to create 2 functions:
 ## 1-makeCacheMatrix, 
-library(MASS)
 makeCacheMatrix <- function(x = matrix()) {
   inver <- NULL # initializing inverse as NULL
   set <- function(y) {
@@ -12,10 +11,8 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   get <- function()x # get the matrix x
   setinv <- function(inverse) inversa <<- inverse
-  getinv <- function() {
-                            inver <- ginv(x)
-                            inver %*%x 
-                            } # obtain the inverse of the matrix
+  getinv <- function() {inver <- ginv(x)
+                        inver %*%x} # obtain the inverse of the matrix
   list(set = set, get = get,
        setinv = setinv,
        getinv = getinv)
